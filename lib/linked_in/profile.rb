@@ -26,6 +26,7 @@ module LinkedIn
     xml_reader :member_url_resources, :as => [UrlResource], :from => 'member-url-resources/member-url'
     xml_reader :api_standard_profile_request
     xml_reader :site_standard_profile_request, :as => ApiStandardProfileRequest
+    xml_reader :site_public_profile_request, :as => ApiStandardProfileRequest
     xml_reader :picture_url
 
   end
