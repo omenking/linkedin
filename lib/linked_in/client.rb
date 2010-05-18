@@ -126,7 +126,7 @@ module LinkedIn
     def network_updates(options={})
       path = "/people/~/network"
       data = get(to_uri(path, options))
-      logger.info "[linkedin] #{data.inspect}"
+      RAILS_DEFAULT_LOGGER.info "[linkedin] #{data.inspect}"
       Network.from_xml(data)
     end
 
