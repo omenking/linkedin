@@ -48,6 +48,7 @@ module LinkedIn
       path = "/v1#{path}"
       response = access_token.get(path, options)
       raise_errors(response)
+      RAILS_DEFAULT_LOGGER.info "[linkedin] #{response.body}"
       response.body
     end
 
@@ -126,7 +127,6 @@ module LinkedIn
     def network_updates(options={})
       path = "/people/~/network"
       data = get(to_uri(path, options))
-      RAILS_DEFAULT_LOGGER.info "[linkedin] #{data.inspect}"
       Network.from_xml(data)
     end
 
