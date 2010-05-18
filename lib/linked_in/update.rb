@@ -5,7 +5,6 @@ module LinkedIn
     xml_reader :timestamp, :as => Integer
     xml_reader :update_key
     xml_reader :update_type
-    xml_reader :update_content
     xml_reader :profile, :as => Profile, :from => 'update-content/person'
     xml_reader :is_commentable?
   end
